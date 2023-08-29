@@ -1,0 +1,44 @@
+{
+  "name": "@graz-sh/types",
+  "description": "Cosmos, Keplr, and Graz related type definitions",
+  "version": "0.0.1",
+  "author": "Griko Nibras <griko@graz.sh>",
+  "repository": "https://github.com/graz-sh/types.git",
+  "homepage": "https://github.com/graz-sh/types",
+  "bugs": "https://github.com/graz-sh/types/issues",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "convert.js",
+    "convert.d.ts",
+    "define.js",
+    "define.d.ts",
+    "keplr.js",
+    "keplr.d.ts"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "long": "*"
+  },
+  "devDependencies": {
+    "@graz-sh/style-guide-core": "^4.0.1",
+    "@types/node": "^18.17.12",
+    "eslint": "^8.48.0",
+    "globby": "^13.2.2",
+    "prettier": "^3.0.2",
+    "tsup": "^7.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "prettier": "@graz-sh/style-guide-core/prettier",
+  "license": "MIT"
+}

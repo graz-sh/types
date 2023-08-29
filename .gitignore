@@ -1,0 +1,20 @@
+# default ignored directores/files
+**/node_modules/
+*.log
+.DS_Store
+.env*
+.eslintcache
+.turbo
+.vercel
+dist/**
+package-lock.json
+tsconfig.tsbuildinfo
+
+# project specific directories/files
+vendor/ethermint/
+vendor/ibc-go/
+vendor/wasmd/
+
+# allowed directories/files
+!.gitkeep
+!.env.example

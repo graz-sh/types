@@ -1,0 +1,54 @@
+// https://github.com/chainapsis/keplr-wallet/blob/master/packages/types/src/chain-info.ts
+
+import type { Bech32Config } from "../bech32";
+import type { Bip44 } from "../bip44";
+import type { AppCurrency, Currency, FeeCurrency } from "./currency";
+
+export interface ChainInfo {
+  readonly rpc: string;
+  readonly rest: string;
+  readonly nodeProvider?: {
+    readonly name: string;
+    readonly email: string;
+    readonly website?: string;
+  };
+  readonly chainId: string;
+  readonly chainName: string;
+  /**
+   * This indicates the type of coin that can be used for stake.
+   * You can get actual currency information from Currencies.
+   */
+  readonly stakeCurrency: Currency;
+  readonly walletUrl?: string;
+  readonly walletUrlForStaking?: string;
+  readonly bip44: Bip44;
+  readonly alternativeBIP44s?: Bip44[];
+  readonly bech32Config: Bech32Config;
+
+  readonly currencies: AppCurrency[];
+  /**
+   * This indicates which coin or token can be used for fee to send transaction.
+   * You can get actual currency information from Currencies.
+   */
+  readonly feeCurrencies: FeeCurrency[];
+
+  /**
+   * Indicate the features supported by this chain. Ex) cosmwasm, secretwasm ...
+   */
+  readonly features?: string[];
+
+  /**
+   * Shows whether the blockchain is in production phase or beta phase.
+   * Major features such as staking and sending are supported on staging blockchains, but without guarantee.
+   * If the blockchain is in an early stage, please set it as beta.
+   */
+  readonly beta?: boolean;
+
+  readonly chainSymbolImageUrl?: string;
+}
+
+export type ChainInfoWithoutEndpoints = Omit<ChainInfo, "rest" | "rpc" | "nodeProvider">;
+
+export interface ChainInfoWithPath extends ChainInfo {
+  path: string;
+}
