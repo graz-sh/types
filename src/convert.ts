@@ -1,8 +1,9 @@
 import { satisfies, valid } from "semver";
 
+import type { Asset, AssetList } from "./assetlist";
+import type { Chain } from "./chain";
 import type { ChainInfo } from "./keplr/chain-info";
 import type { Currency, FeeCurrency, WithGasPriceStep } from "./keplr/currency";
-import type { Asset, AssetList, Chain } from "./registry";
 import { raise } from "./utils";
 
 export const convertChainToChainInfo = (args: RegistryToChainInfoArgs): ChainInfo => {
