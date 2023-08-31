@@ -1,5 +1,8 @@
+export * from "./assetlist";
 export * from "./bech32";
 export * from "./bip44";
+export * from "./chain";
+export * from "./ibc-data";
 export * from "./keplr/chain-info";
 export * from "./keplr/cosmjs";
 export * from "./keplr/currency";
@@ -7,4 +10,5 @@ export * from "./keplr/ethereum";
 export * from "./keplr/secretjs";
 export * from "./keplr/settled";
 export * from "./keplr/wallet";
-export * from "./registry";
+export * from "./memo-keys";
+export * from "./shared";
