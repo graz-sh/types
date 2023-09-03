@@ -1,10 +1,10 @@
 import { satisfies, valid } from "semver";
 
 import type { Asset, AssetList } from "./assetlist";
+import type { Bech32Config } from "./bech32";
 import type { Chain } from "./chain";
 import type { ChainInfo } from "./keplr/chain-info";
 import type { Currency, FeeCurrency, WithGasPriceStep } from "./keplr/currency";
-import { raise } from "./utils";
 
 export const convertChainToChainInfo = (args: RegistryToChainInfoArgs): ChainInfo => {
   const {
@@ -108,7 +108,7 @@ export const convertChainToChainInfo = (args: RegistryToChainInfoArgs): ChainInf
     bip44: {
       coinType: chain.slip44 || 118,
     },
-    bech32Config: chain.bech32_config || raise(`chain '${chain.chain_name}' has no bech32 config`),
+    bech32Config: chain.bech32_config || prefixToBech32Config(chain.bech32_prefix),
     currencies,
     stakeCurrency,
     feeCurrencies: feeCurrencies.length !== 0 ? feeCurrencies : feeCurrenciesDefault,
@@ -117,6 +117,21 @@ export const convertChainToChainInfo = (args: RegistryToChainInfoArgs): ChainInf
 
   return chainInfo;
 };
+
+export const prefixToBech32Config = (
+  prefix: string,
+  validatorPrefix = "val",
+  consensusPrefix = "cons",
+  publicPrefix = "pub",
+  operatorPrefix = "oper",
+): Bech32Config => ({
+  bech32PrefixAccAddr: prefix,
+  bech32PrefixAccPub: prefix + publicPrefix,
+  bech32PrefixValAddr: prefix + validatorPrefix + operatorPrefix,
+  bech32PrefixValPub: prefix + validatorPrefix + operatorPrefix + publicPrefix,
+  bech32PrefixConsAddr: prefix + validatorPrefix + consensusPrefix,
+  bech32PrefixConsPub: prefix + validatorPrefix + consensusPrefix + publicPrefix,
+});
 
 const cleanVer = (ver: string) => {
   // eslint-disable-next-line no-param-reassign
