@@ -1,7 +1,7 @@
 {
   "name": "@graz-sh/types",
   "description": "Cosmos, Keplr, and Graz related type definitions",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Griko Nibras <griko@graz.sh>",
   "repository": "https://github.com/graz-sh/types.git",
   "homepage": "https://github.com/graz-sh/types",
