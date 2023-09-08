@@ -5,5 +5,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["env.d.ts", "**/*.ts", "**/*.js"]
+  "include": ["src/**/*.ts", "src/**/*.js"]
 }
