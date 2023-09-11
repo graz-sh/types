@@ -77,7 +77,7 @@ export const chainToChainInfo = (args: Args): ChainInfo => {
     rpc: getRpcEndpoint(chain),
     rest: getRestEndpoint(chain),
     chainId: chain.chain_id,
-    chainName: chain.pretty_name || "",
+    chainName: chain.pretty_name || chain.chain_name,
     bip44: {
       coinType: chain.slip44 || 118,
     },
