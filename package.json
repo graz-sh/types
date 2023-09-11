@@ -22,6 +22,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "postpublish": "git reset HEAD --hard",
     "prepack": "node scripts/prepack.js",
     "prepublishOnly": "pnpm build"
   },
