@@ -1,7 +1,7 @@
 import type { Asset, AssetList } from "./assetlist";
 import type { Bech32Config } from "./bech32";
 import type { Chain } from "./chain";
-import type { ChainInfo } from "./keplr/chain-info";
+import type { ChainInfo, ChainInfoWithPath } from "./keplr/chain-info";
 import type { Currency, FeeCurrency } from "./keplr/currency";
 import { detectChainFeatures, getChainGasPriceSteps } from "./utils";
 
@@ -89,6 +89,13 @@ export const chainToChainInfo = (args: Args): ChainInfo => {
   };
 
   return chainInfo;
+};
+
+export const chainToChainInfoWithPath = (args: Args): ChainInfoWithPath => {
+  return {
+    ...chainToChainInfo(args),
+    path: args.chain.chain_name,
+  };
 };
 
 export const prefixToBech32Config = (
