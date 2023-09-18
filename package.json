@@ -27,12 +27,21 @@
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "long": "*"
+    "long": "*",
+    "zod": "*"
+  },
+  "peerDependenciesMeta": {
+    "long": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "@graz-sh/style-guide-core": "^4.0.1",
-    "@types/node": "^18.17.14",
-    "eslint": "^8.48.0",
+    "@graz-sh/style-guide-core": "^4.1.0",
+    "@types/node": "^18.17.17",
+    "eslint": "^8.49.0",
     "globby": "^13.2.2",
     "prettier": "^3.0.3",
     "tsup": "^7.2.0"
