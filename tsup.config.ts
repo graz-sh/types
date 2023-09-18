@@ -9,6 +9,7 @@ export default defineConfig({
     "src/define.ts",
     "src/index.ts",
     "src/keplr.ts",
+    "src/zod.ts",
     //
   ],
   format: ["cjs"],

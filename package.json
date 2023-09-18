@@ -15,7 +15,9 @@
     "define.js",
     "define.d.ts",
     "keplr.js",
-    "keplr.d.ts"
+    "keplr.d.ts",
+    "zod.js",
+    "zod.d.ts"
   ],
   "sideEffects": false,
   "scripts": {
