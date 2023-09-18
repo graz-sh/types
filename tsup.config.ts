@@ -15,4 +15,5 @@ export default defineConfig({
   minify: true,
   splitting: true,
   treeshake: true,
+  tsconfig: "./tsconfig.build.json",
 });

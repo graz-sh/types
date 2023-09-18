@@ -2,8 +2,8 @@
   "extends": "@graz-sh/style-guide-core/tsconfig/next.json",
   "compilerOptions": {
     "incremental": false,
-    "target": "esnext"
+    "target": "es6"
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*.ts", "src/**/*.js"]
+  "include": ["**/*.ts"]
 }
