@@ -13,6 +13,7 @@ export default defineConfig({
   ],
   format: ["cjs"],
   minify: true,
+  shims: true,
   splitting: true,
   treeshake: true,
   tsconfig: "./tsconfig.build.json",
