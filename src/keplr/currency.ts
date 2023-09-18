@@ -86,4 +86,6 @@ export type WithGasPriceStep<T> = T & {
   readonly gasPriceStep?: GasPriceSteps;
 };
 
-export type FeeCurrency = WithGasPriceSteps<AppCurrency>;
+export type FeeCurrency = AppCurrency & {
+  readonly gasPriceStep?: GasPriceSteps;
+};
