@@ -60,7 +60,7 @@ export interface Asset {
     png?: string;
     svg?: string;
   };
-  images?: [ImageType, ...ImageType[]];
+  images?: ImageType[];
   /**
    * [OPTIONAL] The coingecko id to fetch asset data from coingecko v3 api. See https://api.coingecko.com/api/v3/coins/list
    */
