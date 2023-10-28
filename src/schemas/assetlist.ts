@@ -174,7 +174,7 @@ export const assetSchema = /* @__PURE__ */ z.object({
       svg: z.string().optional(),
     })
     .optional(),
-  images: z.tuple([imageTypeSchema, z.any()]).optional(),
+  images: imageTypeSchema.optional(),
   /**
    * [OPTIONAL] The coingecko id to fetch asset data from coingecko v3 api. See https://api.coingecko.com/api/v3/coins/list
    */
