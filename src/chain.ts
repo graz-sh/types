@@ -22,11 +22,11 @@ export interface Chain {
   chain_name: string;
   chain_id: string;
   pre_fork_chain_name?: string;
-  pretty_name?: string;
+  pretty_name: string;
   website?: string;
   update_link?: string;
   status: Status;
-  network_type?: NetworkType;
+  network_type: NetworkType;
   /**
    * The default prefix for the human-readable part of addresses that identifies the coin type. Must be registered with SLIP-0173. E.g., 'cosmos'
    */
@@ -38,7 +38,7 @@ export interface Chain {
   daemon_name?: string;
   node_home?: string;
   key_algos?: KeyAlgos[];
-  slip44?: number;
+  slip44: number;
   alternative_slip44s?: number[];
   fees?: {
     fee_tokens: FeeToken[];

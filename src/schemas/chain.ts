@@ -67,11 +67,11 @@ export const chainSchema = /* @__PURE__ */ z.object({
   chain_name: z.string(),
   chain_id: z.string(),
   pre_fork_chain_name: z.string().optional(),
-  pretty_name: z.string().optional(),
+  pretty_name: z.string(),
   website: z.string().optional(),
   update_link: z.string().optional(),
   status: statusSchema,
-  network_type: networkTypeSchema.optional(),
+  network_type: networkTypeSchema,
   /**
    * The default prefix for the human-readable part of addresses that identifies the coin type. Must be registered with SLIP-0173. E.g., 'cosmos'
    */
@@ -83,7 +83,7 @@ export const chainSchema = /* @__PURE__ */ z.object({
   daemon_name: z.string().optional(),
   node_home: z.string().optional(),
   key_algos: z.array(keyAlgosSchema).optional(),
-  slip44: z.number().optional(),
+  slip44: z.number(),
   alternative_slip44s: z.array(z.number()).optional(),
   fees: z
     .object({
