@@ -83,7 +83,7 @@ export const chainSchema = /* @__PURE__ */ z.object({
   daemon_name: z.string().optional(),
   node_home: z.string().optional(),
   key_algos: z.array(keyAlgosSchema).optional(),
-  slip44: z.number(),
+  slip44: z.number().default(118),
   alternative_slip44s: z.array(z.number()).optional(),
   fees: z
     .object({
