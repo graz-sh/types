@@ -70,7 +70,7 @@ export const chainSchema = /* @__PURE__ */ z.object({
   pretty_name: z.string().optional(),
   website: z.string().optional(),
   update_link: z.string().optional(),
-  status: statusSchema.optional(),
+  status: statusSchema,
   network_type: networkTypeSchema.optional(),
   /**
    * The default prefix for the human-readable part of addresses that identifies the coin type. Must be registered with SLIP-0173. E.g., 'cosmos'

@@ -25,7 +25,7 @@ export interface Chain {
   pretty_name?: string;
   website?: string;
   update_link?: string;
-  status?: Status;
+  status: Status;
   network_type?: NetworkType;
   /**
    * The default prefix for the human-readable part of addresses that identifies the coin type. Must be registered with SLIP-0173. E.g., 'cosmos'
