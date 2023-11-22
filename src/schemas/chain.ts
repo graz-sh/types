@@ -16,7 +16,11 @@ export const keyAlgosSchema = /* @__PURE__ */ z.union([
   z.literal("sr25519"),
 ]);
 
-export const consensusTypeSchema = /* @__PURE__ */ z.union([z.literal("tendermint"), z.literal("cometbft")]);
+export const consensusTypeSchema = /* @__PURE__ */ z.union([
+  z.literal("tendermint"),
+  z.literal("cometbft"),
+  z.literal("sei-tendermint"),
+]);
 
 export const icsTypeSchema = /* @__PURE__ */ z.union([z.literal("ics20-1"), z.literal("ics27-1"), z.literal("mauth")]);
 
