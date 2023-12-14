@@ -14,6 +14,7 @@ export const keyAlgosSchema = /* @__PURE__ */ z.union([
   z.literal("ethsecp256k1"),
   z.literal("ed25519"),
   z.literal("sr25519"),
+  z.literal("bn254"),
 ]);
 
 export const consensusTypeSchema = /* @__PURE__ */ z.union([

@@ -6,7 +6,7 @@ import type { ImageType, Status } from "./shared";
 
 export type NetworkType = "mainnet" | "testnet" | "devnet";
 
-export type KeyAlgos = "secp256k1" | "ethsecp256k1" | "ed25519" | "sr25519";
+export type KeyAlgos = "secp256k1" | "ethsecp256k1" | "ed25519" | "sr25519" | "bn254";
 
 export type ConsensusType = "tendermint" | "cometbft" | "sei-tendermint";
 
